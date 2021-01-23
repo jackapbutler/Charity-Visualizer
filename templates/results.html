@@ -50,16 +50,16 @@ const urlParams = new URLSearchParams(window.location.search);
 const all_params = urlParams.get('purpose');
 
 const purpose = all_params.split('?', 1)[0];
-const location = all_params.substring(purpose.indexOf("=")+1);
+const county = all_params.substring(purpose.indexOf("=")+1);
 
 var data_rows = [Object.values(general_data["Registered Charity Name"]), Object.values(general_data["Status"]), Object.values(general_data.Benefact_county), Object.values(general_data.Purpose), Object.values(general_data["Report Size"]), Object.values(general_data["Number of Volunteers"])]
 
-var purpose_data =  general_data.filter(function(hgeneral_data) {
+var purpose_data =  general_data.filter(function(general_data) {
         return Object.values(general_data.Purpose) == purpose;
 });
 
 var location_data =  purpose_data.filter(function(purpose_data) {
-        return Object.values(purpose_data.Benefact_county) == location;
+        return Object.values(purpose_data.Benefact_county) == county;
  });
 
 var data = [{
