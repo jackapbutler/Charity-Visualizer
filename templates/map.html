@@ -39,6 +39,17 @@
     const urlParams = new URLSearchParams(window.location.search);
     const purpose = urlParams.get('purpose');
     
+    var data_rows = [Object.values(general_data["Registered Charity Name"]), Object.values(general_data.Purpose), Object.values(general_data["Longitude"]), Object.values(general_data["Latitude"])];
+    
+    filtered_data = []
+    for (let i = 0; i < Object.values(general_data["Benefact_county"]).length; i++) {
+        var verdict = Object.values(general_data.Purpose)[i].includes(purpose);
+        
+        if (verdict == "true"){
+            filtered_data.push([Object.values(general_data["Registered Charity Name"])[i], Object.values(general_data.Purpose)[i], Object.values(general_data["Longitude"])[i], Object.values(general_data["Latitude"])[i]]);
+        }
+    }
+    
     </script>    
     
     <footer>
