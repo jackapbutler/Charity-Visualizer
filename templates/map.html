@@ -36,8 +36,8 @@
     </script>
 
     <script>
-    var qs = new Querystring();
-    var purpose = qs.get("purpose");
+    const urlParams = new URLSearchParams(window.location.search);
+    const purpose = urlParams.get('purpose');
     
     </script>    
     
