@@ -54,8 +54,8 @@
     
     var data_rows = [Object.values(general_data["Registered Charity Name"]), Object.values(general_data.Purpose), Object.values(general_data["Longitude"]), Object.values(general_data["Latitude"])];
     
-    var filtered_data =  general_data.filter(function(hero) {
-        return Object.values(general_data.Purpose) == purpose;
+    var filtered_data =  data_rows.filter(function(data_rows){
+        return data_rows.Purpose == purpose;
     });
     
     </script>    
