@@ -69,7 +69,7 @@
     } 
 
     var data = [{
-        type: 'scattergeo',
+        type: 'scatter',
         mode: 'markers+text',
         text: names,
         lon: longs,
@@ -91,37 +91,7 @@
         ], 
     }];
 
-    var layout = {
-        title: 'Canadian cities',
-        font: {
-            family: 'Droid Serif, serif',
-            size: 6
-        },
-        titlefont: {
-            size: 16
-       },
-        geo: {
-            scope: 'world',
-            resolution: 50,
-            lonaxis: {
-                 'range': [-130, -55]
-            },
-            lataxis: {
-                 'range': [40, 70]
-            },
-            showrivers: true,
-            rivercolor: '#fff',
-            showlakes: true,
-            lakecolor: '#fff',
-            showland: true,
-            landcolor: '#EAEAAE',
-            countrycolor: '#d3d3d3',
-            countrywidth: 1.5,
-            subunitcolor: '#d3d3d3'
-         }
-    };
-
-Plotly.newPlot('map', data, layout);
+Plotly.newPlot('map', data);
 
     </script>    
         
