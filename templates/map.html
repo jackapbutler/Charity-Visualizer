@@ -49,7 +49,7 @@
     var filtered_data = [];
     for (i = 0; i < data_rows[1].length; i++) {
         if(data_rows[1][i].includes(purpose)){
-            filtered_data.push([data_rows[0][i], data_rows[2][i], data_rows[3][i], cur_url.concat(data_rows[4][i])]);
+            filtered_data.push([data_rows[4][i], data_rows[2][i], data_rows[3][i], cur_url.concat(data_rows[4][i])]);
         }
     else {
             // pass
@@ -57,10 +57,12 @@
     }   
     
     // separate out data
+    var counties = [];
     var longs = [];
     var lats = [];
     var urls = [];
     for (i = 0; i < filtered_data.length; i++) {
+            counties.push(filtered_data[i][0])
             longs.push(filtered_data[i][1]);
             lats.push(filtered_data[i][2]);
             urls.push(filtered_data[i][3]);
@@ -68,9 +70,10 @@
 
     var data = [{
         type: 'scattergeo',
-        mode: 'markers',
+        mode: 'markers+text',
         lon: longs,
         lat: lats,
+        text: counties,
         marker: {size: 7}
     }];
 
@@ -87,10 +90,10 @@
             scope: 'world',
             resolution: 50,
             lonaxis: {
-                 'range': [-8, 8]
+                 'range': [-9, 9]
             },
             lataxis: {
-                 'range': [48, 55]
+                 'range': [42, 57]
             },
             showrivers: true,
             rivercolor: '#fff',
