@@ -57,12 +57,10 @@
     }   
     
     // separate out data
-    var names = [];
     var longs = [];
     var lats = [];
     var urls = [];
     for (i = 0; i < filtered_data.length; i++) {
-            names.push(filtered_data[i][0]);
             longs.push(filtered_data[i][1]);
             lats.push(filtered_data[i][2]);
             urls.push(filtered_data[i][3]);
@@ -70,8 +68,7 @@
 
     var data = [{
         type: 'scattergeo',
-        mode: 'markers+text',
-        text: names,
+        mode: 'markers',
         lon: longs,
         lat: lats,
         marker: {size: 7}
@@ -90,10 +87,10 @@
             scope: 'world',
             resolution: 50,
             lonaxis: {
-                 'range': [-10, 10]
+                 'range': [-8, 8]
             },
             lataxis: {
-                 'range': [45, 60]
+                 'range': [48, 55]
             },
             showrivers: true,
             rivercolor: '#fff',
