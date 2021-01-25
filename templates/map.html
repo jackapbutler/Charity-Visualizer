@@ -51,12 +51,21 @@
     <script type='text/javascript'>
     const urlParams = new URLSearchParams(window.location.search);
     const purpose = urlParams.get('purpose');
+    var cur_url = window.location.href;
     
-    var data_rows = [Object.values(general_data["Registered Charity Name"]), Object.values(general_data.Purpose), Object.values(general_data["Longitude"]), Object.values(general_data["Latitude"])];
+    // Pulling from general_data json files
+    var data_rows = [Object.values(general_data["Registered Charity Name"]), Object.values(general_data.Purpose), Object.values(general_data["Longitude"]), Object.values(general_data["Latitude"]), Object.values(general_data.Benefact_county)];
     
-    var filtered_data =  data_rows.filter(function(data_rows){
-        return data_rows.Purpose == purpose;
-    });
+    // Filtering on Purpose
+    var filtered_data = [];
+    for (i = 0; i < data_rows[1].length; i++) {
+        if(data_rows[1][i].includes(purpose)){
+            filtered_data.push([data_rows[0][i], data_rows[1][i], data_rows[2][i], data_rows[3][i], cur_url.concat(data_rows[4][i])]);
+        }
+    else {
+            console.log("");
+        }   
+    }   
     
     </script>    
         
