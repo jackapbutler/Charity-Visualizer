@@ -69,17 +69,45 @@
     } 
 
     var data = [{
-        type: 'scatter',
+        type: 'scattergeo',
         mode: 'markers+text',
         text: names,
         lon: longs,
         lat: lats,
-        marker: {
-            size: 7,
-        }
+        marker: {size: 7}
     }];
 
-Plotly.newPlot('map', data);
+    var layout = {
+        title: ' ',
+        font: {
+            family: 'Droid Serif, serif',
+            size: 6
+        },
+        titlefont: {
+            size: 16
+       },
+        geo: {
+            scope: 'world',
+            resolution: 50,
+            lonaxis: {
+                 'range': [-10, 10]
+            },
+            lataxis: {
+                 'range': [45, 60]
+            },
+            showrivers: true,
+            rivercolor: '#fff',
+            showlakes: true,
+            lakecolor: '#fff',
+            showland: true,
+            landcolor: '#EAEAAE',
+            countrycolor: '#d3d3d3',
+            countrywidth: 1.5,
+            subunitcolor: '#d3d3d3'
+         }
+    };
+
+Plotly.newPlot('map', data, layout);
 
     </script>    
         
