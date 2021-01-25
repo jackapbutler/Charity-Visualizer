@@ -52,10 +52,22 @@
             filtered_data.push([data_rows[0][i], data_rows[1][i], data_rows[2][i], data_rows[3][i], cur_url.concat(data_rows[4][i])]);
         }
     else {
-            console.log("");
+            // pass
         }   
     }   
     
+    // separate out data
+    var names = [];
+    var longs = [];
+    var lats = [];
+    var urls = [];
+    for (i = 0; i < data_rows[1].length; i++) {
+            names.push(filtered_data[i][0]);
+            longs.push(filtered_data[i][1]);
+            lats.push(filtered_data[i][2]);
+            urls.push(filtered_data[i][3]);
+    } 
+
     var data = [{
         type: 'scattergeo',
         mode: 'markers+text',
