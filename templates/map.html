@@ -86,25 +86,18 @@
         titlefont: {
             size: 16
        },
-        geo: {
-            scope: 'world',
-            resolution: 50,
-            lonaxis: {
-                 'range': [-9, 9]
-            },
-            lataxis: {
-                 'range': [42, 57]
-            },
-            showrivers: true,
-            rivercolor: '#fff',
-            showlakes: true,
-            lakecolor: '#fff',
-            showland: true,
-            landcolor: '#EAEAAE',
-            countrycolor: '#d3d3d3',
-            countrywidth: 1.5,
-            subunitcolor: '#d3d3d3'
-         }
+        mapbox: {
+		style: "white-bg",
+		layers: [
+			{
+				sourcetype: "raster",
+				source: ["https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}"],
+				below: "traces"
+			}
+		],
+		center: { lat: 53.6, lon: -8 },
+		zoom: 3
+	    },
     };
 
 Plotly.newPlot('map', data, layout);
