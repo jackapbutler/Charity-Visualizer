@@ -48,8 +48,8 @@
     const urlParams = new URLSearchParams(window.location.search);
     const purpose = urlParams.get('purpose');
     var cur_url = window.location.href.concat("?location=");
-    
-    document.getElementById('jack').action = "results.html?purpose=".concat(purpose).concat("?location=").concat(document.getElementById("selectPlace").value);
+
+    document.getElementById('jack').action = "results.html?purpose=".concat(purpose);
     
     // Pulling from general_data json files
     var data_rows = [Object.values(general_data["Registered Charity Name"]), Object.values(general_data.Purpose), Object.values(general_data["Longitude"]), Object.values(general_data["Latitude"]), Object.values(general_data.Benefact_county)];
