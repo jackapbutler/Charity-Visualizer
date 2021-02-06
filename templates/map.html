@@ -35,9 +35,9 @@
     </nav>
 
     <form method="get" id="jack" onsubmit="get_url()">
-    <label for="selectPlace">Choose a county:</label>
-    <select name="selectPlace" id="selectPlace"></select>
-    <input type="submit" value="See Results">
+        <label for="selectPlace">Choose a county:</label>
+        <select name="selectPlace" id="selectPlace"></select>
+        <input type="submit" value="See Results">
     </form>
 
     <script type='text/javascript'>
@@ -50,9 +50,10 @@
     var cur_url = window.location.href.concat("?location=");
     
     function get_url(){
-        var action_src = "results.html?purpose=".concat(purpose).concat("?location=").concat(document.getElementById("selectPlace").value);
+        var action_src = "results.html?purpose="+ purpose + "?location=" + document.getElementById("selectPlace").value;
+        console.log(action_src)
         var your_form = document.getElementById('jack');
-        your_form.action = action_src ;
+        your_form.action = action_src;
     }
 
     
