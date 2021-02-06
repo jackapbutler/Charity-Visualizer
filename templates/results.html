@@ -56,11 +56,11 @@ var data_rows = [Object.values(general_data["Registered Charity Name"]), Object.
 // Filtering on Purpose & Location
 var filtered_data = [];
 for (i = 0; i < data_rows[1].length; i++) {
-    if(data_rows[1][i].includes(purpose)){
-        filtered_data.push([data_rows[0][i], data_rows[1][i], data_rows[2][i], data_rows[3][i]]);
+    if(data_rows[3][i].includes(purpose) && data_rows[2][i].includes(county)){
+        filtered_data.push([data_rows[0][i], data_rows[1][i], data_rows[2][i], data_rows[3][i], data_rows[4][i], data_rows[5][i]]);
     }
     else {
-        console.log("no");
+        pass;
     }   
 }  
 
@@ -74,7 +74,7 @@ var data = [{
     font: {family: "Arial", size: 12, color: "white"}
   },
   cells: {
-    values: values,
+    values: filtered_data,
     align: "center",
     line: {color: "black", width: 1},
     font: {family: "Arial", size: 11, color: ["black"]}
