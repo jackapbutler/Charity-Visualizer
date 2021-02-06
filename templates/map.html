@@ -34,10 +34,10 @@
       </div>
     </nav>
 
-    <form id="jack" onsubmit="get_url()">
+    <form id="jack" action="results.html">
         <select name="purp" id="purp"></select>
-        <label for="selectPlace">Choose a county:</label>
-        <select name="selectPlace" id="selectPlace"></select>
+        <label for="loc">Choose a county:</label>
+        <select name="loc" id="loc"></select>
         <input type="submit" value="See Results">
     </form>
 
@@ -81,7 +81,7 @@
     }
     var unique_counties = counties.filter(onlyUnique);
     
-    var select = document.getElementById("selectPlace");
+    var select = document.getElementById("loc");
     select.innerHTML = "";
     for(var i = 0; i < unique_counties.length; i++) {
         var opt = unique_counties[i];
