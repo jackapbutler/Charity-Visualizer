@@ -47,10 +47,8 @@
 
 <script type="text/javascript">
 const urlParams = new URLSearchParams(window.location.search);
-const all_params = urlParams.get('purpose');
-
-const purpose = all_params.split('?', 1)[0];
-const county = all_params.substring(all_params.indexOf("=")+1);
+const purpose = urlParams.get('purp');
+const county = urlParams.get('loc');
 
 // Basic dataset pulling from json file pasted above
 var data_rows = [Object.values(general_data["Registered Charity Name"]), Object.values(general_data["Status"]), Object.values(general_data.Benefact_county), Object.values(general_data.Purpose), Object.values(general_data["Report Size"]), Object.values(general_data["Number of Volunteers"])]
