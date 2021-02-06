@@ -47,6 +47,7 @@
     <script type='text/javascript'>
     const urlParams = new URLSearchParams(window.location.search);
     const purpose = urlParams.get('purpose');
+    var cur_url = window.location.href.concat("?location=");
     
     document.getElementById('jack').action = "results.html?purpose=".concat(purpose).concat("?location=").concat(document.getElementById("selectPlace").value);
     
