@@ -34,7 +34,7 @@
       </div>
     </nav>
 
-    <form method="get" id="jack">
+    <form method="get" id="jack" onsubmit="get_url()">
     <label for="selectPlace">Choose a county:</label>
     <select name="selectPlace" id="selectPlace"></select>
     <input type="submit" value="See Results">
@@ -48,8 +48,13 @@
     const urlParams = new URLSearchParams(window.location.search);
     const purpose = urlParams.get('purpose');
     var cur_url = window.location.href.concat("?location=");
+    
+    function get_url(){
+        var action_src = "results.html?purpose=".concat(purpose).concat("?location=").concat(document.getElementById("selectPlace").value);
+        var your_form = document.getElementById('jack');
+        your_form.action = action_src ;
+    }
 
-    document.getElementById('jack').action = "results.html?purpose=".concat(purpose);
     
     // Pulling from general_data json files
     var data_rows = [Object.values(general_data["Registered Charity Name"]), Object.values(general_data.Purpose), Object.values(general_data["Longitude"]), Object.values(general_data["Latitude"]), Object.values(general_data.Benefact_county)];
