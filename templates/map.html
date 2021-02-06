@@ -36,10 +36,10 @@
 
     <script>
     res = window.location.href.concat("?location=");
-    document.getElementById('sky-form').action = res.concat(document.getElementById("selectPlace").value)
+    document.getElementById('jack').action = res.concat(document.getElementById("selectPlace").value)
     </script>
 
-    <form method="get">
+    <form method="get" id="jack">
     <label for="selectPlace">Choose a county:</label>
     <select name="selectPlace" id="selectPlace"></select>
     <input type="submit" value="See Results">
