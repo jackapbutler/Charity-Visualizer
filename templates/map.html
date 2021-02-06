@@ -35,6 +35,7 @@
     </nav>
 
     <form id="jack" onsubmit="get_url()">
+        <select name="purp" id="purp"></select>
         <label for="selectPlace">Choose a county:</label>
         <select name="selectPlace" id="selectPlace"></select>
         <input type="submit" value="See Results">
@@ -86,18 +87,17 @@
     function onlyUnique(value, index, self) {
         return self.indexOf(value) === index;
     }
-
     var unique_counties = counties.filter(onlyUnique);
-
-    var select = document.getElementById("selectPlace");
-    select.innerHTML = "";
     
-    // Populate list with options:
+    var select = document.getElementById("selectPlace");
+
+    select.innerHTML = "";
     for(var i = 0; i < unique_counties.length; i++) {
         var opt = unique_counties[i];
         select.innerHTML += "<option value=\"" + opt + "\">" + opt + "</option>";
     }
 
+    document.getElementById("selectPlace").innerHTML = purpose;
     </script>    
         
     <footer>
