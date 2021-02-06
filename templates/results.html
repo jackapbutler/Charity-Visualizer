@@ -60,6 +60,7 @@ for (i = 0; i < data_rows[1].length; i++) {
         filtered_data.push([data_rows[0][i], data_rows[1][i], data_rows[2][i], data_rows[3][i], data_rows[4][i], data_rows[5][i]]);
     }
 }  
+filtered_data = filtered_data[0].map((_, colIndex) => filtered_data.map(row => row[colIndex]));
 
 var data = [{
   type: 'table',
