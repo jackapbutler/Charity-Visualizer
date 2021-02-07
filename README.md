@@ -1,5 +1,4 @@
 Check it out!
-<br/><br/> 
 https://jackapbutler.github.io/Irish-Charity-Finder/templates/index.html
 <br/><br/> 
 
