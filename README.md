@@ -1,4 +1,6 @@
-Check it out!
+# Irish Charity Finder
+
+Check it out at:
 https://jackapbutler.github.io/Irish-Charity-Finder/templates/index.html
 <br/><br/> 
 
