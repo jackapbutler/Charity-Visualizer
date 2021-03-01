@@ -2,7 +2,7 @@ Check it out!
 https://jackapbutler.github.io/Irish-Charity-Finder/templates/index.html
 <br/><br/> 
 
-Displays data relating to Irish Charities and trends in charitable causes.
+Displays data relating to Irish Charities and trends in charitable causes. Aims to accurately allocate large charitable contributions to the organisations that deserve it the most. Use reinforcement learning to optimise world humanity wellbeing statistics based on allocation of money to charities.
 <br/><br/> 
 
 Future To-Do:
