@@ -3,15 +3,11 @@
 Check it out at:
 https://jackapbutler.github.io/Irish-Charity-Finder/templates/index.html
 <br/><br/> 
-
-Displays data relating to Irish Charities and trends in charitable causes. Aims to accurately allocate large charitable contributions to the organisations that deserve it the most. Use reinforcement learning to optimise world humanity wellbeing statistics based on allocation of money to charities.
+Displays data relating to Irish Charities and trends in charitable causes. 
 <br/><br/> 
 
-Future To-Do:
-1. Clean up website aesthetic.
-2. Use [data.gov.ie](http://data.gov.ie/) for society wellbeing statistics, etc. Also [worldbank.com](http://worldbank.com/) and other websites. Display these using Plotly.
-3. Display impact of donation in terms of calculating my impact such as “1 person off the streets”.
-4. Include “AI-Powered High Impact Fund” based on criteria which uses machine learning to optimise portfolio. Which donates monthly to predicted causes and charities within those causes.
+# Future Ambitions:
+Aims to accurately allocate large charitable contributions to the organisations that deserve it the most. Use reinforcement learning to optimise world humanity wellbeing statistics based on allocation of money to charities. Include “AI-Powered High Impact Fund” based on criteria which uses machine learning to optimise portfolio. Which donates monthly to predicted causes and charities within those causes. Use [data.gov.ie](http://data.gov.ie/) for society wellbeing statistics, etc. Also [worldbank.com](http://worldbank.com/) and other websites.
 <br/><br/> 
 
 Research how to identify important causes.
