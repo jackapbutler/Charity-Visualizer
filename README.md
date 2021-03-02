@@ -1,4 +1,4 @@
-# Charity Data Visualizer 
+# Charity Visualizer 
 
 Displays data relating to Irish Charities and trends in charitable causes, Check it out at:
 XXXXXXXXXX.com
