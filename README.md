@@ -1,6 +1,7 @@
 # Charity Data Visualizer 
 
 Displays data relating to Irish Charities and trends in charitable causes, Check it out at:
+<br/><br/> 
 https://jackapbutler.github.io/Irish-Charity-Finder/templates/index.html 
 <br/><br/> 
 
