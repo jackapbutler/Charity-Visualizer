@@ -13,7 +13,7 @@ st.set_page_config(layout="wide")
 row1_1, row1_2 = st.beta_columns((2,3))
 
 with row1_1:
-    st.title("Irish Charity Data")
+    st.title("Charity Visualizer")
     #hour_selected = st.slider("Select hour of pickup", 0, 23)
 
 with row1_2:
@@ -36,45 +36,21 @@ def load_datasets():
 
 data, fin_data, gen_data = load_datasets()
 
-# CREATING FUNCTION FOR MAPS
-def map(data, lat, lng, zoom):
-    st.write(pdk.Deck(
-        map_style="mapbox://styles/mapbox/light-v9",
-        initial_view_state={
-            "latitude": lat,
-            "longitude": lng,
-            "zoom": zoom,
-            "pitch": 50,
-        },
-        layers=[]
-    ))
-
 # FILTERING DATA BY A CERTAIN PROPERTY
 #data = data[data[DATE_TIME].dt.hour == hour_selected]
 
 # LAYING OUT THE MIDDLE SECTION OF THE APP WITH THE MAPS
 row2_1, row2_2, row2_3, row2_4 = st.beta_columns((2,1,1,1))
 
-# SETTING THE ZOOM LOCATIONS FOR THE AIRPORTS
-Dublin= [53.3501, -6.2661]
-Cork = [51.9036, -8.4684]
-Galway = [53.2709, -9.0627]
-zoom_level = 11
-Ireland = (np.average(data["lat"]), np.average(data["lng"]))
-
 # WRITING THESE LOCATIONS ONTO PAGE 
 with row2_1:
     st.write("**Ireland _insert filters**")
-    map(data, Ireland[0], Ireland[1], 6)
 
 with row2_2:
     st.write("**Dublin _insert filters**")
-    map(data, Dublin[0], Dublin[1], zoom_level)
 
 with row2_3:
     st.write("**Cork _insert filters**")
-    map(data, Cork[0], Cork[1], zoom_level)
 
 with row2_4:
     st.write("**Galway _insert filters**")
-    map(data, Galway[0], Galway[1], zoom_level)
