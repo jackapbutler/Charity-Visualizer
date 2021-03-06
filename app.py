@@ -33,20 +33,49 @@ def load_data():
 data = load_data()
 print(data.columns)
 
-purposes = list(data.Purpose.str.split(' ', expand=True).stack().unique())
+purposes = sorted(list(data.Purpose.str.split(' ', expand=True).stack().unique()))
 for word in list(purposes):  # iterating on a copy since removing will mess things up
     if word in ['/', '', ' ']:
         purposes.remove(word)
 
-# ADD PURPOSE FILTER TO THE SIDEBAR
+# ADD FILTERS TO THE SIDEBAR
 purpose_filter = st.sidebar.multiselect(
     "Filter by Charitable Purpose",
     purposes
 )
 
-# FILTERING DATA BY A CERTAIN PURPOSE
+counties = sorted(data['Benefact_county'].unique())
+county_filter = st.sidebar.multiselect(
+    "Filter by Irish County",
+    counties
+)
+
+size_filter = st.sidebar.multiselect(
+    "Filter by Charity Size",
+    data['Report Size'].unique()
+)
+
+num_vols = ['None', '1-9', '10-19', '20-49', '50-249', '250-499', '500-999', '1000-4999', '5000+']
+volunteers_filter = st.sidebar.multiselect(
+    "Filter by Number of Volunteers",
+    num_vols
+)
+
+# FILTERING DATA BY SIDEBAR CHOICES
 for i in purpose_filter:
     data = data[data.Purpose.str.contains(i)]
 
+for i in county_filter:
+    data = data[data.Benefact_county.str.contains(i)]
 
-# LAYING OUT THE MIDDLE SECTION OF THE APP 
+for i in size_filter:
+    data = data[data['Report Size'].str.contains(i)]
+
+for i in volunteers_filter:
+    if(i == '1-9'):
+        i = '01-Sep'
+    elif(i == '10-19'):
+        i = 'Oct-19'
+    data = data[data['Number of Volunteers'].str.contains(i)]
+
+# LAYING OUT THE ChHARTS OF THE APP 
