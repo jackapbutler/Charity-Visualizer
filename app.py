@@ -14,7 +14,6 @@ row1_1, row1_2 = st.beta_columns((2,3))
 
 with row1_1:
     st.title("Charity Visualizer")
-    #hour_selected = st.slider("Select hour of pickup", 0, 23)
 
 with row1_2:
     st.write(
@@ -33,21 +32,21 @@ def load_data():
 
 data = load_data()
 print(data.columns)
-# FILTERING DATA BY A CERTAIN PROPERTY
-#data = data[data[DATE_TIME].dt.hour == hour_selected]
 
-# LAYING OUT THE MIDDLE SECTION OF THE APP WITH THE MAPS
-row2_1, row2_2, row2_3, row2_4 = st.beta_columns((2,1,1,1))
+purposes = list(data.Purpose.str.split(' ', expand=True).stack().unique())
+for word in list(purposes):  # iterating on a copy since removing will mess things up
+    if word in ['/', '', ' ']:
+        purposes.remove(word)
 
-# WRITING THESE LOCATIONS ONTO PAGE 
-with row2_1:
-    st.write("**Ireland _insert filters**")
+# ADD PURPOSE FILTER TO THE SIDEBAR
+purpose_filter = st.sidebar.multiselect(
+    "Filter by Charitable Purpose",
+    purposes
+)
 
-with row2_2:
-    st.write("**Dublin _insert filters**")
+# FILTERING DATA BY A CERTAIN PURPOSE
+for i in purpose_filter:
+    data = data[data.Purpose.str.contains(i)]
 
-with row2_3:
-    st.write("**Cork _insert filters**")
 
-with row2_4:
-    st.write("**Galway _insert filters**")
+# LAYING OUT THE MIDDLE SECTION OF THE APP 
