@@ -26,16 +26,13 @@ with row1_2:
 
 # LOADING THE CLEANED DATASETS
 @st.cache(persist=True)
-def load_datasets():
-    path = './Data/CleanCSV/'
+def load_data():
+    path = './Data/CleanCSV/big_dataset.csv'
+    df = pd.read_csv(path).dropna()
+    return df
 
-    df = pd.read_csv(path+'general_data.csv').dropna(subset=['lat', 'lng'])[['lat', 'lng']]
-    df2 = pd.read_csv(path+'fin_data.csv')
-    df3 = pd.read_csv(path+'general_data.csv').dropna(subset=['lat', 'lng'])
-    return df, df2, df3
-
-data, fin_data, gen_data = load_datasets()
-
+data = load_data()
+print(data.columns)
 # FILTERING DATA BY A CERTAIN PROPERTY
 #data = data[data[DATE_TIME].dt.hour == hour_selected]
 
