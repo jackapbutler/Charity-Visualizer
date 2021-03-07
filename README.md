@@ -3,13 +3,11 @@
 Make sure you have **Docker Desktop** and **GitHub Desktop** installed correctly on your local machine.
 
 ## Running the App
-<pre>
 1.    Clone the Charity-Visualizer repo to your local machine through GitHub Desktop.
 2.    Open the command line and **cd** to the directory where Charity-Visualizer is downloaded.
 3.    Run the command; **docker build -t charity_app .** to create the docker image from the Dockerfile.
 4.    Run the command; **docker run -p 8501:8501 charity_app:latest** to run the application from the Docker image.
 5.    The app **should** be available at http://localhost:8501/.
-</pre>
 <br/><br/> 
 
 # Future Ambitions:
